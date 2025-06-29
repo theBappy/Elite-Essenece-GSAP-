@@ -10,7 +10,7 @@ const raleway = Raleway({
 });
 
 const gambarino = localFont({
-  src: './gamb.woff2',
+  src: './ga.otf',
   variable: "--font-gambarino",
   display: 'swap'
 })
