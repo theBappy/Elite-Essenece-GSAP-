@@ -13,6 +13,7 @@ import clsx from "clsx";
 
 import { Bounded } from "@/components/Bounded";
 import { FadeIn } from "@/components/FadeIn";
+import { RevealText } from "@/components/RevealText";
 
 gsap.registerPlugin(useGSAP);
 
@@ -27,19 +28,24 @@ const Hero: FC<HeroProps> = ({ slice }) => {
       className="relative min-h-screen overflow-hidden bg-neutral-950"
     >
       <FadeIn vars={{scale: 1,opacity: 0.5}}
-      className="bg-img absolute inset-0 scale-125 opacity-0">
+      className="bg-img absolute inset-0 motion-safe:scale-125 opacity-0">
         <PrismicNextImage
           fill
-          className="object-cover"
+          className="object-cover motion-reduce:opacity-50"
           priority
           alt=""
           field={slice.primary.image}
         />
       </FadeIn>
       <div className="relative flex h-screen flex-col justify-center">
-        <div className="max-w-xl text-6xl leading-tight text-neutral-50 md:text-7xl lg:text-8xl font-display">
-          <PrismicRichText field={slice.primary.heading} />
-        </div>
+        <RevealText
+        field={slice.primary.heading}
+        id="hero-heading" 
+        className="max-w-xl text-6xl leading-none text-neutral-50 md:text-7xl lg:text-8xl font-display" 
+        staggerAmount={0.2}
+        duration={1.7}
+        as="h1"
+        />   
         <FadeIn 
         vars={{
           delay: 1, duration: 1.3
