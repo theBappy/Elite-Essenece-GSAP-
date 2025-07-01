@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Raleway, Geist_Mono } from "next/font/google";
 import localFont from 'next/font/local'
 import "./globals.css";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -29,8 +31,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${raleway.variable} ${gambarino.variable} antialiased`}>
       <body
+      className="bg-neutral-950 text-white"
       >
+        <main className="pt-14 md:pt-16">
+          <Navbar />
         {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
