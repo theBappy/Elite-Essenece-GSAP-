@@ -192,6 +192,7 @@ export type FragnanceDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | FragnanceListSlice
   | ProductFeatureSlice
   | ScrollTextSlice
   | HeroSlice;
@@ -260,6 +261,36 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes = FragnanceDocument | HomepageDocument;
+
+/**
+ * Default variation for FragnanceList Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FragnanceListSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *FragnanceList*
+ */
+type FragnanceListSliceVariation = FragnanceListSliceDefault;
+
+/**
+ * FragnanceList Shared Slice
+ *
+ * - **API ID**: `fragnance_list`
+ * - **Description**: FragnanceList
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FragnanceListSlice = prismic.SharedSlice<
+  "fragnance_list",
+  FragnanceListSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -499,6 +530,9 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      FragnanceListSlice,
+      FragnanceListSliceVariation,
+      FragnanceListSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
