@@ -55,7 +55,7 @@ const ScrollText: FC<ScrollTextProps> = ({ slice }) => {
         end: 'bottom -100%',
         pin: true,
         scrub: 2, 
-        markers: true,
+       
       }
     })
 

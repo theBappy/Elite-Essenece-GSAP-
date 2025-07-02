@@ -72,6 +72,7 @@ export const RevealText = ({
         >
           <span className="reveal-text-word mt-0 inline-block translate-y-[120%] will-change-transform">
             {word}
+            {index < words.length -1 ? <>&nbsp;</>:null}
           </span>
         </span>
       ))}
