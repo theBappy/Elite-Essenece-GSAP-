@@ -69,7 +69,7 @@ const ProductFeature: FC<ProductFeatureProps> = async ({ slice }) => {
                   fallback="Fragnance"
                 />
               </h3>
-              <p className="mt-2 text-gray-400">Eau De Perfume</p>
+              <p className="mt-2 text-gray-400">Eau De Perfume Essence</p>
               <ButtonLink
                 document={fragnance}
                 variant="Secondary"
